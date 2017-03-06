@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="dark" center>
+    <ion-title>
+    <ion-select [(ngModel)]="cat"> 
+      <ion-option value="AllCats" name="AllCats" selected="true">All Categories</ion-option>
+      <ion-option value="Vehicle" name="Vehicle">Vehicles</ion-option>
+      <ion-option value="MobTabs" name="MobTabs">Mobile & Tablets</ion-option>
+      <ion-option value="HomeApp" name="HomeApp">Home Appiances</ion-option>
+    </ion-select>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <vehicle  *ngIf="cat === 'Vehicle'"></vehicle>
+  <mob-tab  *ngIf="cat === 'MobTabs'"></mob-tab>
+  <home-appliances *ngIf="cat === 'HomeApp'"></home-appliances>
+  <all-ads  *ngIf="cat === 'AllCats'"></all-ads>
+</ion-content>

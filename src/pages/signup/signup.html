@@ -1,0 +1,40 @@
+<!--
+  Generated template for the Signup page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>SIGN-UP</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]="username"  type="text"></ion-input>
+  </ion-item>
+
+  <ion-list *ngIf="!loginFlag"> 
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input [(ngModel)]="email" type="text" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="pass"  type="password"></ion-input>
+  </ion-item>
+
+<div padding style="text-align: center; margin-top: 20px;">
+  <button ion-button full color="secondary"  type="submit" (click)="register()">Register</button>
+</div>
+
+    </ion-list>
+
+    <div *ngIf="loginFlag">
+  Welcome to Classiera
+</div>
+</ion-content>

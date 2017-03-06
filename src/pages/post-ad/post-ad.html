@@ -1,0 +1,136 @@
+<!--
+  Generated template for the PostAd page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>POST AD</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+   <ion-item>
+    <ion-label>Choose Category</ion-label> 
+    <ion-select [(ngModel)]="cat" required> 
+      <ion-option value="Vehicle" name="Vehicle">Vehicle</ion-option>
+      <ion-option value="MobTabs" name="MobTabs">Mobile & Tablets</ion-option>
+      <ion-option value="HomeApp" name="HomeApp">Home Appiances</ion-option>
+      
+    </ion-select>
+  </ion-item>
+
+  <form #f="ngForm" (ngSubmit)="newAd(f.value)">
+  <ion-list>
+
+  <ion-item>
+    <ion-label>title</ion-label>
+    <ion-input id="title" placeholder="Ad Title" name="title" type="text" ngModel required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Contract Number</ion-label>
+    <ion-input id="contact" placeholder="Contact Number" name="contact" ngModel required></ion-input>
+  </ion-item>
+
+  <div [ngSwitch]="cat">
+     <div *ngSwitchCase="'Vehicle'">
+       Vehicle
+       <!--<input type="text"  id="brand" placeholder="Brand" name="brand" ngModel>-->
+       <ion-item>
+        <ion-label>Brand</ion-label>
+        <ion-input name="brand" type="text" ngModel></ion-input>
+      </ion-item>
+
+      <!--<input type="text" id="model" placeholder="Model" name="model" ngModel>-->
+      <ion-item>
+        <ion-label>Model</ion-label>
+        <ion-input placeholder="Model" name="model" ngModel type="text"></ion-input>
+      </ion-item>
+
+      <!--<input type="number" id="kms" placeholder="Kms Driven" name="kms" ngModel>-->
+      <ion-item>
+        <ion-label>Kms Driven</ion-label>
+        <ion-input id="kms" placeholder="Kms Driven" name="kms" type="number" ngModel></ion-input>
+      </ion-item>
+
+      <!--<input type="text" id="features" placeholder="Features..." name="features" ngModel>-->
+      <ion-item>
+        <ion-label>Features</ion-label>
+        <ion-input id="features" placeholder="Features..." name="features" type="text" ngModel></ion-input>
+      </ion-item>
+     </div>    
+
+     <div *ngSwitchCase="'MobTabs'">
+       <!--<input type="text"  id="brand" placeholder="Brand" name="brand" ngModel>-->
+        <ion-item>
+        <ion-label>Brand</ion-label>
+        <ion-input id="brand" placeholder="Brand" name="brand" type="text" ngModel></ion-input>
+      </ion-item>
+
+      <!--<input type="text" id="warrenty" placeholder="Warrenty" name="warrenty" ngModel>-->
+       <ion-item>
+        <ion-label>Warrenty</ion-label>
+        <ion-input id="warrenty" placeholder="Warrenty" name="warrenty" type="text" ngModel></ion-input>
+      </ion-item>
+       
+      <!--<input type="text"  id="accessories" placeholder="Accessories" name="accessories" ngModel>-->
+       <ion-item>
+        <ion-label>Accessories</ion-label>
+        <ion-input id="accessories" placeholder="Accessories" name="accessories" type="text" ngModel></ion-input>
+      </ion-item>
+
+      <!--<input type="text" id="details" placeholder="Details.." name="details" ngModel>-->
+       <ion-item>
+        <ion-label>Details</ion-label>
+        <ion-input id="details" placeholder="Details.." name="details" type="text" ngModel></ion-input>
+      </ion-item>
+
+     </div>
+     <div *ngSwitchCase="'HomeApp'">
+      <!--<input type="text" id="type" placeholder="Type" name="type" ngModel>-->
+      <ion-item>
+        <ion-label>Type</ion-label>
+        <ion-input id="type" placeholder="Type" name="type" type="text" ngModel></ion-input>
+      </ion-item>
+
+      <!--<input type="text" id="condition" placeholder="Condition" name="condition" ngModel>-->
+      <ion-item>
+        <ion-label>Condition</ion-label>
+        <ion-input id="condition" placeholder="Condition" name="condition" type="text" ngModel></ion-input>
+      </ion-item>
+    </div>
+  
+     </div>
+     <!--<input type="number" id="price" placeholder="Price in Rs." name="price" ngModel required>-->
+       <ion-item>
+        <ion-label>Price</ion-label>
+        <ion-input type="number" id="price" placeholder="Price in Rs." name="price" ngModel></ion-input>
+      </ion-item>
+
+    <!--<input type="text" id="area" placeholder="Area & Location" name="area" ngModel required>-->
+     <ion-item>
+        <ion-label>Area & Location</ion-label>
+        <ion-input id="area" placeholder="Area & Location" name="area" type="text" ngModel></ion-input>
+      </ion-item>
+
+    <!--<input type="text" id="img" placeholder="Paste Image URL Here" name="img" ngModel required>-->
+     <ion-item>
+        <ion-label>Image URL</ion-label>
+        <ion-input id="img" placeholder="Paste Image URL Here" name="img" type="text" ngModel></ion-input>
+     </ion-item>
+   <!--</div>-->
+
+</ion-list>
+
+<div padding style="text-align: center">
+  <button ion-button full color="secondary" type="submit">Submit</button>
+</div>
+
+  </form>
+</ion-content>

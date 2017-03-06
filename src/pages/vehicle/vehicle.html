@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Vehicle page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--<ion-navbar>
+    <ion-title>vehicle</ion-title>
+
+    <button [navPush]="postAd">Go To About</button>
+  </ion-navbar>-->
+
+</ion-header>
+
+
+<!--<ion-content padding>
+
+  <ion-card *ngFor="let item of veh_arr">-->
+    <!--<ion-buttons>
+      <button ion-button icon-only (click)="addTaskCard($event)">
+        <ion-icon ios="ios-close-circle" md="md-close-circle" ></ion-icon>
+      </button>
+    </ion-buttons>-->
+  <!--<img src="{{item.img}}"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{item.title}}
+      </ion-card-title>
+    <h3>Category: {{item.category}} </h3>
+    <ion-badge color="secondary" item-right>{{item.price}}</ion-badge>
+    <h3>Location: {{item.area}} </h3>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>-->
+
+<ion-content padding>
+  <ion-list>
+  <ion-item-sliding>
+    <ion-item *ngFor="let item of veh_arr">
+      <ion-thumbnail item-left>
+      <img src="{{item.img}}"/>
+      </ion-thumbnail>
+    <!--<ion-toggle checked="false"></ion-toggle>-->
+      <ion-label>
+        <h2><b> {{item.title}}</b></h2>
+        <h3><b> Category: </b> {{item.category}} </h3>
+        <h3><b> Location: </b> {{item.area}} </h3>
+      </ion-label>
+      <ion-badge color="secondary" item-right>PKR {{item.price}}</ion-badge>
+    </ion-item>
+    <ion-item-options side="left">
+      <button ion-button color="primary">
+        <ion-icon name="text"></ion-icon>
+        Text
+      </button>
+      <button ion-button color="secondary">
+        <ion-icon name="call"></ion-icon>
+        Call
+      </button>
+    </ion-item-options>
+    <ion-item-options side="right">
+      <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>
